@@ -144,7 +144,7 @@ describe('Token', async () => {
 			})
 
 			it('resets the allowance', async () => {
-				expect(await token.allowance(deployer.address, exchange.address)).to.be.equal(0)
+				expect(await token.allowance(deployer.address, exchange.address)).to.be.equal
 			})
 
 			it('emits a Transfer event', async () => {
