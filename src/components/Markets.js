@@ -20,16 +20,17 @@ const Markets = () => {
         <h2>Select Market</h2>
       </div>
 
-      {chainId && config[chainId] ? (   
-        <select name="markets" id="markets" onChange={marketHandler}> 
+      {chainId && config[chainId] ? (
+        <select name="markets" id="markets" onChange={marketHandler}>
           <option value={`${config[chainId].Dapp.address},${config[chainId].mETH.address}`}>Dapp / mETH</option>
           <option value={`${config[chainId].Dapp.address},${config[chainId].mDAI.address}`}>Dapp / mDAI</option>
-        </select> 
-      ) : ( 
-        <div> 
+        </select>
+      ) : (
+        <div>
           <p>Not Deployed to Network</p>
-        </div>  
-      )}  
+        </div>
+      )}
+
       <hr />
     </div>
   )
