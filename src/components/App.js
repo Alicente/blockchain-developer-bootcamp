@@ -44,8 +44,8 @@ function App() {
     // Load Exchange Smart Contract 
     const exchangeConfig = config[chainId].exchange 
     const exchange = await loadExchange(provider, exchangeConfig.address, dispatch)
+    
     // Listen to events
-   
     subscribeToEvents(exchange, dispatch)
   }   
 
