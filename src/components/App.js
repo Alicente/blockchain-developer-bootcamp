@@ -16,7 +16,9 @@ import Navbar from './Navbar'
 import Markets from './Markets'
 import Balance from './Balance'
 import Order from './Order'
+import PriceChart from './PriceChart'
 import OrderBook from './OrderBook'
+
 
 function App() {
   const dispatch = useDispatch()
@@ -48,7 +50,7 @@ function App() {
     const exchangeConfig = config[chainId].exchange 
     const exchange = await loadExchange(provider, exchangeConfig.address, dispatch)
 
-// Fetch all orders: open, filled, cancelled
+    // Fetch all orders: open, filled, cancelled
     loadAllOrders(provider, exchange, dispatch)
     
     // Listen to events
@@ -75,8 +77,7 @@ function App() {
 
         </section>
         <section className='exchange__section--right grid'>
-
-          {/* PriceChart */}
+          <PriceChart />
 
           {/* Transactions */}
 
