@@ -5,7 +5,7 @@ import Chart from 'react-apexcharts';
 import arrowDown from '../assets/down-arrow.svg';
 import arrowUp from '../assets/up-arrow.svg';
 
-import { options, defaultSerie } from './PriceChart.config';
+import { options, defaultSeries } from './PriceChart.config';
 
 import { priceChartSelector } from '../store/selectors';
 

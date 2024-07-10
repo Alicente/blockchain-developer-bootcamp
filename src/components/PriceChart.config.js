@@ -74,8 +74,12 @@ export const options = {
   }
 }
 
-export const defaultSerie = []
-// Code in the series as a temporary placeholder for demonstration
+
+export const defaultSeries = [
+  {
+    data: [] // your default series data
+  }
+];
 
 export const series = [
   {
