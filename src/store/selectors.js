@@ -8,7 +8,8 @@ const RED = '#F45353'
 
 const account = state => get(state, 'provider.account')			
 const tokens = state => get(state, 'tokens.contracts')			
-			
+const events = state => get(state, 'exchange.events')
+
 const allOrders = state => get(state, 'exchange.allOrders.data', [])			
 const cancelledOrders = state => get(state, 'exchange.cancelledOrders.data', [])			
 const filledOrders = state => get(state, 'exchange.filledOrders.data', [])			
@@ -25,6 +26,19 @@ const openOrders = state => {
 	})		
 	return openOrders		
 }			
+
+//------------------------------------------------------------------------------------------
+// MY EVENTS
+
+export const myEventsSelector = createSelector(
+	account,
+	events,
+	(account, events) => {
+		events = events.filter((e) => e.args.user === account)
+		console.log(events)
+		return events 
+	}
+)
 
 //-----------------------------------------------------------------------------------------------------------
 // MY OPEN ORDERS
@@ -89,8 +103,8 @@ const decorateOrder = (order, tokens) => {
 	// Calculate token price to 5 decimal places 
 	const precision = 100000
 	let tokenPrice = (token1Amount / token0Amount)
-	tokenPrice = Math.round(tokenPrice * 100000) / 100000		
-			
+	tokenPrice = Math.round(tokenPrice * precision) / precision			
+
 	return({		
 		...order,
 		token0Amount: ethers.utils.formatUnits(token0Amount, "ether"), 	
