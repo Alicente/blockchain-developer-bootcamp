@@ -25,14 +25,14 @@ yarn-error.log*
 node_modules
 .env
 
-# Hardhat files
-/cache
-/artifacts
+# solidity-coverage files
+/coverage
+/coverage.json
 
 # TypeChain files
 /typechain
 /typechain-types
 
-# solidity-coverage files
-/coverage
-/coverage.json
+# Hardhat files
+/cache
+/artifacts
